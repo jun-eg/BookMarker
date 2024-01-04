@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from BookMarkerApp.views import add_bookmark
+from BookMarkerApp.views import delete_bookmark
+from BookMarkerApp.views import get_bookmarks
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('add_bookmark/', add_bookmark),
+    path('delete_bookmark/', delete_bookmark),
+    path('get_bookmarks/', get_bookmarks),
 ]
