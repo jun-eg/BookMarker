@@ -1,5 +1,6 @@
-import styles from "./index.module.css"
 import { addBookmark, deleteBookmark, getBookmarks } from './api';
+import styles from "./index.module.css"
+
 function IndexPopup() {
   const [data, setData] = useState("")
 
