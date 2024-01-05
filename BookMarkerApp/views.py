@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Bookmark
 from django.views.decorators.http import require_http_methods
-@require_http_methods(["POST"])
+
 def add_bookmark(request):
     url = request.POST.get('url', None)
     if url:
@@ -14,7 +14,7 @@ def add_bookmark(request):
     else:
         return JsonResponse({'message': 'URLが指定されていません。'}, status=400)
 
-@require_http_methods(["POST"])
+
 def delete_bookmark(request):
     url = request.POST.get('url', None)
     if url:
@@ -27,7 +27,7 @@ def delete_bookmark(request):
     else:
         return JsonResponse({'message': 'URLが指定されていません。'}, status=400)
 
-@require_http_methods(["GET"])
+
 def get_bookmarks(request):
     bookmarks = Bookmark.objects.all()
     bookmarks_data = [{'id': bookmark.id, 'url': bookmark.url} for bookmark in bookmarks]
