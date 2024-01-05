@@ -7,12 +7,8 @@ function IndexPopup() {
   const [url, setUrl] = useState("")
 
   useEffect(() => {
-    const queryInfo = { active: true, currentWindow: true }
-    chrome.tabs.query(queryInfo, (tabs) => {
-      const currentTab = tabs[0]
-      setUrl(currentTab.url)
-    })
-  }, [])
+    setUrl(window.location.href)
+  })
 
   return (
     <div className={styles.container}>
@@ -22,7 +18,7 @@ function IndexPopup() {
           <label htmlFor="name">現在のurl </label>
           <input type="text" id="test" name="url" value={url}></input>
         </form>
-        <button onClick={() => addBookmark(url)}>保存</button>
+        <button>保存</button>
       </div>
     </div>
   )

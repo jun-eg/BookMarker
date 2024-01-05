@@ -7,12 +7,8 @@ function IndexPopup() {
   const [url, setUrl] = useState("")
 
   useEffect(() => {
-    const queryInfo = { active: true, currentWindow: true }
-    chrome.tabs.query(queryInfo, (tabs) => {
-      const currentTab = tabs[0]
-      setUrl(currentTab.url)
-    })
-  }, [])
+    setUrl(window.location.href)
+  })
 
   return (
     <div className={styles.container}>
