@@ -3,7 +3,7 @@ import type { Bookmark } from "./types"
 // addBookmark function
 export async function addBookmark(url: string): Promise<Bookmark> {
   try {
-    const response = await fetch("http://localhost:8000/add_bookmark/", {
+    const response = await fetch("http://localhost:8001/add_bookmark/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -21,7 +21,7 @@ export async function addBookmark(url: string): Promise<Bookmark> {
 // deleteBookmark function
 export async function deleteBookmark(url: string): Promise<Bookmark> {
   try {
-    const response = await fetch("http://localhost:8000/delete_bookmark/", {
+    const response = await fetch("http://localhost:8001/delete_bookmark/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -39,7 +39,7 @@ export async function deleteBookmark(url: string): Promise<Bookmark> {
 // getBookmarks function
 export async function getBookmarks(): Promise<Bookmark[]> {
   try {
-    const response = await fetch("http://localhost:8000/get_bookmarks/", {
+    const response = await fetch("http://localhost:8001/get_bookmarks/", {
       method: "GET"
     })
     const data = await response.json()
