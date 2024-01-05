@@ -16,9 +16,9 @@ function IndexPopup() {
         <h1>現在のページを保存しますか</h1>
         <form action="送信先" method="送信メソッド">
           <label htmlFor="name">現在のurl </label>
-          <input type="text" id="test" name="url" value={url}></input>
+          <input type="text" id="test" name="url"></input>
         </form>
-        <button onClick={() => addBookmark(url)}>保存</button>
+        <button>保存</button>
       </div>
     </div>
   )

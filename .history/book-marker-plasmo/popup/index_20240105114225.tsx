@@ -18,7 +18,7 @@ function IndexPopup() {
           <label htmlFor="name">現在のurl </label>
           <input type="text" id="test" name="url" value={url}></input>
         </form>
-        <button onClick={() => addBookmark(url)}>保存</button>
+        <button onClick={() => addBookmark}>保存</button>
       </div>
     </div>
   )
