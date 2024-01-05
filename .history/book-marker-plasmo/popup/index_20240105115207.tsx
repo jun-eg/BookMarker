@@ -7,8 +7,10 @@ function IndexPopup() {
   const [url, setUrl] = useState("")
 
   useEffect(() => {
+    // 現在アクティブなタブのURLを取得する
     const queryInfo = { active: true, currentWindow: true }
     chrome.tabs.query(queryInfo, (tabs) => {
+      // タブの配列から現在のタブのURLを取得し、stateを更新
       const currentTab = tabs[0]
       setUrl(currentTab.url)
     })
